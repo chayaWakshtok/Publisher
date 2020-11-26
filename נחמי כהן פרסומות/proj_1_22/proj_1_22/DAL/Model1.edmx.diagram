@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="91697c025fe34d268c4119aa1d699f6e" Name="Diagram1">
+        <EntityTypeShape EntityType="publishersModel.Priority" Width="1.5" PointX="5" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="publishersModel.Publish" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="publishersModel.FK_Publish_Priority" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="publishersModel.User" Width="1.5" PointX="3" PointY="5.25" />
+        <EntityTypeShape EntityType="publishersModel.Company" Width="1.5" PointX="0.75" PointY="3.125" />
+        <AssociationConnector Association="publishersModel.FK_Publish_Company" />
+        <AssociationConnector Association="publishersModel.FK_Users_Company" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

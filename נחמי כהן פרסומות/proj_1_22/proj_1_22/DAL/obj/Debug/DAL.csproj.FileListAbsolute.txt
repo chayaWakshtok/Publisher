@@ -1,0 +1,19 @@
+C:\Users\1000262903\Documents\private\proj_1_22\DAL\bin\Debug\DAL.dll.config
+C:\Users\1000262903\Documents\private\proj_1_22\DAL\bin\Debug\DAL.dll
+C:\Users\1000262903\Documents\private\proj_1_22\DAL\bin\Debug\DAL.pdb
+C:\Users\1000262903\Documents\private\proj_1_22\DAL\bin\Debug\EntityFramework.dll
+C:\Users\1000262903\Documents\private\proj_1_22\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\1000262903\Documents\private\proj_1_22\DAL\bin\Debug\EntityFramework.xml
+C:\Users\1000262903\Documents\private\proj_1_22\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\1000262903\Documents\private\proj_1_22\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\1000262903\Documents\private\proj_1_22\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\1000262903\Documents\private\proj_1_22\DAL\obj\Debug\DAL.dll
+C:\Users\1000262903\Documents\private\proj_1_22\DAL\obj\Debug\DAL.pdb
+C:\Users\User\Dropbox\My PC (DESKTOP-B5S1T71)\Documents\נחמי כהן פרסומות\proj_1_22\proj_1_22\DAL\bin\Debug\DAL.dll.config
+C:\Users\User\Dropbox\My PC (DESKTOP-B5S1T71)\Documents\נחמי כהן פרסומות\proj_1_22\proj_1_22\DAL\bin\Debug\DAL.dll
+C:\Users\User\Dropbox\My PC (DESKTOP-B5S1T71)\Documents\נחמי כהן פרסומות\proj_1_22\proj_1_22\DAL\bin\Debug\DAL.pdb
+C:\Users\User\Dropbox\My PC (DESKTOP-B5S1T71)\Documents\נחמי כהן פרסומות\proj_1_22\proj_1_22\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\User\Dropbox\My PC (DESKTOP-B5S1T71)\Documents\נחמי כהן פרסומות\proj_1_22\proj_1_22\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\User\Dropbox\My PC (DESKTOP-B5S1T71)\Documents\נחמי כהן פרסומות\proj_1_22\proj_1_22\DAL\obj\Debug\DAL.dll
+C:\Users\User\Dropbox\My PC (DESKTOP-B5S1T71)\Documents\נחמי כהן פרסומות\proj_1_22\proj_1_22\DAL\obj\Debug\DAL.pdb
+C:\Users\User\Dropbox\My PC (DESKTOP-B5S1T71)\Documents\נחמי כהן פרסומות\proj_1_22\proj_1_22\DAL\obj\Debug\DAL.csprojAssemblyReference.cache

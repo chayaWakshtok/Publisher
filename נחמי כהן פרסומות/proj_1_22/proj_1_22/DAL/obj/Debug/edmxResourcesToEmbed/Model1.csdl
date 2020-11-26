@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="publishersModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Priority">
+    <Key>
+      <PropertyRef Name="PriorityId" />
+    </Key>
+    <Property Name="PriorityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PriorityValue" Type="Int32" Nullable="false" />
+    <Property Name="PriorityDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Show" Type="Int32" />
+    <NavigationProperty Name="Publishes" Relationship="Self.FK_Publish_Priority" FromRole="Priority" ToRole="Publish" />
+  </EntityType>
+  <EntityType Name="Publish">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyId" Type="Int32" />
+    <Property Name="Priority" Type="Int32" Nullable="false" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Video" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TotalShow" Type="Int32" />
+    <NavigationProperty Name="Priority1" Relationship="Self.FK_Publish_Priority" FromRole="Publish" ToRole="Priority" />
+    <NavigationProperty Name="Company" Relationship="publishersModel.FK_Publish_Company" FromRole="Publish" ToRole="Company" />
+  </EntityType>
+  <Association Name="FK_Publish_Priority">
+    <End Role="Priority" Type="Self.Priority" Multiplicity="1" />
+    <End Role="Publish" Type="Self.Publish" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Priority">
+        <PropertyRef Name="PriorityId" />
+      </Principal>
+      <Dependent Role="Publish">
+        <PropertyRef Name="Priority" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="publishersEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Priorities" EntityType="Self.Priority" />
+    <EntitySet Name="Publishes" EntityType="Self.Publish" />
+    <AssociationSet Name="FK_Publish_Priority" Association="Self.FK_Publish_Priority">
+      <End Role="Priority" EntitySet="Priorities" />
+      <End Role="Publish" EntitySet="Publishes" />
+    </AssociationSet>
+    <EntitySet Name="Users" EntityType="publishersModel.User" />
+    <EntitySet Name="Companies" EntityType="publishersModel.Company" />
+    <AssociationSet Name="FK_Publish_Company" Association="publishersModel.FK_Publish_Company">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="Publish" EntitySet="Publishes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Company" Association="publishersModel.FK_Users_Company">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserPassword" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsAdmin" Type="Boolean" Nullable="false" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyId" Type="Int32" />
+    <NavigationProperty Name="Company" Relationship="publishersModel.FK_Users_Company" FromRole="User" ToRole="Company" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="CompanyId" />
+    </Key>
+    <Property Name="CompanyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Publishes" Relationship="publishersModel.FK_Publish_Company" FromRole="Company" ToRole="Publish" />
+    <NavigationProperty Name="Users" Relationship="publishersModel.FK_Users_Company" FromRole="Company" ToRole="User" />
+  </EntityType>
+  <Association Name="FK_Publish_Company">
+    <End Type="publishersModel.Company" Role="Company" Multiplicity="0..1" />
+    <End Type="publishersModel.Publish" Role="Publish" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyId" />
+      </Principal>
+      <Dependent Role="Publish">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Company">
+    <End Type="publishersModel.Company" Role="Company" Multiplicity="0..1" />
+    <End Type="publishersModel.User" Role="User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyId" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
